@@ -13,15 +13,13 @@ class LanguageTile extends StatelessWidget {
         /// Example: Change locale
         /// The initial locale is automatically determined by the library.
         /// Changing the locale like this will persist the selected locale.
-        context.setLocale(newValue ? const Locale('tr') : const Locale('en'));
+        context.setLocale(newValue ? const Locale('th') : const Locale('en'));
       },
-      shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(12))),
-      value: context.locale == const Locale('tr'),
+      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12))),
+      value: context.locale == const Locale('th'),
       title: Text(
-        tr('toggle_language'),
-        style:
-            Theme.of(context).textTheme.titleMedium!.apply(fontWeightDelta: 2),
+        tr('TOGGLE_LANGUAGE'),
+        style: Theme.of(context).textTheme.titleMedium!.apply(fontWeightDelta: 2),
       ),
     );
   }

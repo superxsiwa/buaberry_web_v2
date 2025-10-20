@@ -5,10 +5,10 @@ import 'package:go_router/go_router.dart';
 import 'package:ionicons/ionicons.dart';
 
 import '../../../../utils/context_extensions.dart';
-import 'widgets/header.dart';
-import 'widgets/language_tile.dart';
-import 'widgets/social_tile_widget.dart';
-import 'widgets/theme_widget.dart';
+import '../../shop/presentation/widgets/header.dart';
+import '../../shop/presentation/widgets/language_tile.dart';
+import '../../shop/presentation/widgets/social_tile_widget.dart';
+import '../../shop/presentation/widgets/theme_widget.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -18,19 +18,17 @@ class HomeScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.logout_outlined,
-              color: context.colorScheme.primary),
-          onPressed: () {
-            context.pop();
-          }
-        ),
+            icon: Icon(Icons.logout_outlined, color: context.colorScheme.primary),
+            onPressed: () {
+              context.pop();
+            }),
       ),
       backgroundColor: context.colorScheme.surface,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          const Header(text: 'intro'),
+          const Header(),
           const Divider(),
           const ThemeWidget(),
           const LanguageTile(),
@@ -46,29 +44,25 @@ class HomeScreen extends ConsumerWidget {
               switch (index) {
                 case 0:
                   return SocialTile(
-                    leadingIcon: Icon(Ionicons.logo_github,
-                        color: context.colorScheme.primary),
+                    leadingIcon: Icon(Ionicons.logo_github, color: context.colorScheme.primary),
                     title: 'Github',
                     url: Uri.parse('https://github.com/erengun'),
                   );
                 case 1:
                   return SocialTile(
-                    leadingIcon: Icon(Ionicons.logo_linkedin,
-                        color: context.colorScheme.primary),
+                    leadingIcon: Icon(Ionicons.logo_linkedin, color: context.colorScheme.primary),
                     title: 'Linkedin',
                     url: Uri.parse('https://www.linkedin.com/in/erengun'),
                   );
                 case 2:
                   return SocialTile(
-                    leadingIcon: Icon(Ionicons.logo_medium,
-                        color: context.colorScheme.primary),
+                    leadingIcon: Icon(Ionicons.logo_medium, color: context.colorScheme.primary),
                     title: 'Medium',
                     url: Uri.parse('https://erengun.medium.com/'),
                   );
                 case 3:
                   return SocialTile(
-                    leadingIcon: Icon(Ionicons.globe_outline,
-                        color: context.colorScheme.primary),
+                    leadingIcon: Icon(Ionicons.globe_outline, color: context.colorScheme.primary),
                     title: 'Website',
                     url: Uri.parse('https://erengun.dev'),
                   );

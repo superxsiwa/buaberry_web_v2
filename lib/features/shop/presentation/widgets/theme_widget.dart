@@ -17,11 +17,8 @@ class ThemeWidget extends ConsumerWidget {
         Padding(
           padding: const EdgeInsets.all(15),
           child: Text(
-            tr('toggle_theme'),
-            style: Theme.of(context)
-                .textTheme
-                .titleMedium!
-                .apply(fontWeightDelta: 2),
+            tr('TOGGLE_THEME'),
+            style: Theme.of(context).textTheme.titleMedium!.apply(fontWeightDelta: 2),
           ),
         ),
         const Spacer(),
@@ -44,8 +41,7 @@ class ThemeWidget extends ConsumerWidget {
               value: ThemeMode.dark,
             ),
           ],
-          onSelectionChanged: (Set<ThemeMode> theme) =>
-              ref.read(themeLogicProvider.notifier).setThemeMode(theme.first),
+          onSelectionChanged: (Set<ThemeMode> theme) => ref.read(themeLogicProvider.notifier).setThemeMode(theme.first),
         ),
       ],
     );

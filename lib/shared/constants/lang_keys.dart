@@ -1,6 +1,8 @@
 class LangKeys {
   // App
   static const String CLICK = 'CLICK';
+  static const String TOGGLE_THEME = 'TOGGLE_THEME';
+  static const String TOGGLE_LANGUAGE = 'TOGGLE_LANGUAGE';
 
   // Clobal
   static const String SHOP_NAME = 'SHOP_NAME';
