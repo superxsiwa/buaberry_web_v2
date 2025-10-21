@@ -10,9 +10,9 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:stack_trace/stack_trace.dart' as stack_trace;
 
-import 'constants/strings.dart';
 import 'hive/hive.dart';
 import 'my_app.dart';
+import 'shared/constants/strings.dart';
 
 /// Try using const constructors as much as possible!
 

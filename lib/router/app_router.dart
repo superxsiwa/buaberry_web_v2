@@ -33,5 +33,9 @@ GoRouter goRouter(Ref ref) => GoRouter(
           path: BRRoute.menu.route,
           builder: (BuildContext context, GoRouterState state) => const MenuPage(),
         ).fade(),
+        GoRoute(
+          path: BRRoute.sale_point.route,
+          builder: (BuildContext context, GoRouterState state) => const SalePointPage(),
+        ).fade(),
       ],
     );

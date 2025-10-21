@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../constants/assets.dart';
+import '../../../../shared/constants/assets.dart';
 import '../../../../router/app_router.dart';
 import '../../domain/login_response.dart';
 import '../register/register_dialog.dart';

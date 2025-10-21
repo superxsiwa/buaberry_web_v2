@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:dio/dio.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../constants/endpoints.dart';
+import '../../shared/constants/endpoints.dart';
 import '../../shared/utils/cachefor_extension.dart';
 
 part 'network_repository.g.dart';

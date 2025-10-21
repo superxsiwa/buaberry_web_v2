@@ -2,8 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:riverpod/riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../../constants/endpoints.dart';
 import '../../../data/repository/network_repository.dart';
+import '../../../shared/constants/endpoints.dart';
 import '../domain/login_request.dart';
 import '../domain/login_response.dart';
 import '../domain/register_response.dart';
@@ -33,18 +33,13 @@ class HttpAuthRepository implements AuthenticationRepository {
   @override
   Future<LoginResponse> login(String email, String password) async {
     try {
-      final Response<dynamic> response = await dio.post(Endpoints.login,
-          data: LoginCredentials(
-              email: email, password: password));
+      final Response<dynamic> response = await dio.post(Endpoints.login, data: LoginCredentials(email: email, password: password));
       if (response.statusCode != 200) {
         throw Exception('Failed to login');
       }
-      final LoginResponse loginResponse =
-          LoginResponse.fromJson(response.data as Map<String, dynamic>);
-      ref
-          .read(networkRepositoryProvider.notifier)
-          .setToken(loginResponse.token);
-          return loginResponse;
+      final LoginResponse loginResponse = LoginResponse.fromJson(response.data as Map<String, dynamic>);
+      ref.read(networkRepositoryProvider.notifier).setToken(loginResponse.token);
+      return loginResponse;
     } catch (e) {
       if (e is DioException) {
         if (e.response?.statusCode == 401) {
@@ -52,9 +47,7 @@ class HttpAuthRepository implements AuthenticationRepository {
         }
         if (e.response?.statusCode == 400) {
           throw Exception('User not found');
-        }
-        else 
-        {
+        } else {
           throw Exception('Login failed');
         }
       }
@@ -70,9 +63,7 @@ class HttpAuthRepository implements AuthenticationRepository {
   @override
   Future<RegisterResponse> register(String email, String password) async {
     try {
-      final Response<dynamic> response = await dio.post(Endpoints.register,
-          data: LoginCredentials(
-              email: email, password: password));
+      final Response<dynamic> response = await dio.post(Endpoints.register, data: LoginCredentials(email: email, password: password));
       if (response.statusCode != 200) {
         throw Exception('Failed to register');
       }
@@ -94,7 +85,6 @@ class HttpAuthRepository implements AuthenticationRepository {
 }
 
 @riverpod
-AuthenticationRepository authenticationRepository(
-    Ref ref) {
+AuthenticationRepository authenticationRepository(Ref ref) {
   return HttpAuthRepository(ref);
 }

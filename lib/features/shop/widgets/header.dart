@@ -24,7 +24,7 @@ class Header extends StatelessWidget {
               children: <Widget>[
                 const Gap(10),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                  padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
                   child: SvgPicture.asset(dotenv.get(LangKeys.LOGO_PATH), width: screenWidth / 4),
                 ),
                 NKWTextWidget(
@@ -33,13 +33,6 @@ class Header extends StatelessWidget {
                   fontSize: CommonConstants.fontTopicSize,
                   fontWeight: FontWeight.bold,
                 ),
-                // if (!isMobileScreen)
-                //   NKWTextWidget(
-                //     text: context.tr(LangKeys.SHOP_SALOGAN),
-                //     fontSize: CommonConstants.fontLabelSize,
-                //     fontWeight: FontWeight.bold,
-                //     color: Colors.grey.shade700,
-                //   ),
               ],
             ),
             Column(
@@ -83,7 +76,7 @@ class Header extends StatelessWidget {
           children: [
             NKWTextWidget(
               text: context.tr(LangKeys.SHOP_SALOGAN),
-              fontSize: isMobileScreen ? CommonConstants.fontLabelSize : CommonConstants.fontHeaderSize,
+              fontSize: isMobileScreen ? CommonConstants.fontLabelSize : CommonConstants.fontTopicSize,
               fontWeight: FontWeight.bold,
               color: Colors.grey.shade700,
             ),
