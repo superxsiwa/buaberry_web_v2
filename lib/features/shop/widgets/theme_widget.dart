@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ionicons/ionicons.dart';
 
 import '../../../../../config/theme/theme_logic.dart';
+import '../../../../shared/constants/lang_keys.dart';
 
 class ThemeWidget extends ConsumerWidget {
   const ThemeWidget({
@@ -17,7 +18,7 @@ class ThemeWidget extends ConsumerWidget {
         Padding(
           padding: const EdgeInsets.all(15),
           child: Text(
-            tr('TOGGLE_THEME'),
+            context.tr(LangKeys.TOGGLE_THEME),
             style: Theme.of(context).textTheme.titleMedium!.apply(fontWeightDelta: 2),
           ),
         ),

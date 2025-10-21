@@ -1,6 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../shared/constants/constants.dart';
+
 class LanguageTile extends StatelessWidget {
   const LanguageTile({
     super.key,
@@ -18,7 +20,7 @@ class LanguageTile extends StatelessWidget {
       shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12))),
       value: context.locale == const Locale('th'),
       title: Text(
-        tr('TOGGLE_LANGUAGE'),
+        context.tr(LangKeys.TOGGLE_LANGUAGE),
         style: Theme.of(context).textTheme.titleMedium!.apply(fontWeightDelta: 2),
       ),
     );

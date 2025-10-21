@@ -31,7 +31,7 @@ GoRouter goRouter(Ref ref) => GoRouter(
             }).fade(),
         GoRoute(
           path: BRRoute.menu.route,
-          builder: (BuildContext context, GoRouterState state) => const MenuScreen(),
+          builder: (BuildContext context, GoRouterState state) => const MenuPage(),
         ).fade(),
       ],
     );

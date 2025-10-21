@@ -1,5 +1,6 @@
 class LangKeys {
   // App
+  static const String LOGO_PATH = 'LOGO_PATH';
   static const String CLICK = 'CLICK';
   static const String TOGGLE_THEME = 'TOGGLE_THEME';
   static const String TOGGLE_LANGUAGE = 'TOGGLE_LANGUAGE';

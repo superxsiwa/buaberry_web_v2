@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
 
-import '../../../../utils/context_extensions.dart';
+import '../../../../shared/utils/context_extensions.dart';
 import '../../domain/register_response.dart';
 import '../login/login_controller.dart';
 

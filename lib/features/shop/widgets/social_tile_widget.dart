@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 
-import '../../../../../utils/context_extensions.dart';
-import '../../../../../utils/url_utils.dart';
+import '../../../../shared/shared.dart';
 
 class SocialTile extends StatelessWidget {
-  const SocialTile(
-      {required this.title,
-      required this.url,
-      required this.leadingIcon,
-      super.key});
+  const SocialTile({required this.title, required this.url, required this.leadingIcon, this.leadingImageIcon, super.key});
   final String title;
   final Uri url;
-  final Icon leadingIcon;
+  final Icon? leadingIcon;
+  final ImageIcon? leadingImageIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -32,11 +28,10 @@ class SocialTile extends StatelessWidget {
         tileColor: context.colorScheme.surface,
         selectedTileColor: context.colorScheme.onSurface,
         leading: Container(
-          child: leadingIcon,
+          child: leadingIcon ?? leadingImageIcon,
         ),
         onTap: () => openUrl(url),
-        shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(12))),
+        shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12))),
       ),
     );
   }

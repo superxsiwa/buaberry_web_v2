@@ -1,17 +1,13 @@
 {
-
   "CLICK": "Click",
   "TOGGLE_THEME": "Theme",
   "TOGGLE_LANGUAGE": "English",
-
   "SHOP_NAME": "BUABERRy",
   "SHOP_MOBILE_PHONE": "091-836-6687",
   "SHOP_SALOGAN": "Made every day, Delicious every day.",
-
   "MENU": "Menu",
   "TWENTY_BATH": "20 bath",
   "TEN_BATH": "10 bath",
-
   "SANDWICH": "Sandwich",
   "SANDWICH_TUNA": "Tuna",
   "SANDWICH_TUNA_BOLOGNA": "Tuna Bologna",
@@ -21,7 +17,6 @@
   "SANDWICH_PORK_FLOSS_BOLOGNA": "Pork Floss Bologna",
   "SANDWICH_HAM_CHEESE": "Ham and Cheese",
   "SANDWICH_SAUSAGE_FRIED_EGG": "Sausage and Fried egg",
-
   "VEGETABLE_HEALTHY": "Vegetable healthy",
   "VH_CORN": "Steamed Corn",
   "VH_BANANA": "Steamed banana",
@@ -29,7 +24,6 @@
   "VH_YELLOW_POTATO": "Steamed yellow potatoes",
   "VH_PUMPKIN": "Steamed pumpkin",
   "VH_TARO": "Steamed taro",
-
   "DESSERT": "Dessert",
   "D_BROWNIE": "Brownie",
   "D_BANANA_CAKE": "Banana Cake",
@@ -44,19 +38,16 @@
   "D_BUTTER_SUGAR_BREAD": "Butter Sugar Bread",
   "D_GARLIC_BREAD": "Garlic Bread",
   "D_DAIFUKU": "Daifuku",
-
   "SALAPAO": "Salapao",
   "S_MINCED_PORK_SALTY_EGG": "Minced Pork with Salty Egg Bun",
   "S_MINCED_PORK": "Minced Pork Bun",
   "S_ROAST_RED_PORK": "Roast Red Pork",
   "S_RED_BEAN": "Red Bean",
   "S_TARO": "Taro",
-
   "REPACK": "Repack",
   "S_BREAD_STICK": "Bread Stick",
   "S_CHOCOLATE_STICK": "Chocolate Stick",
   "S_CHOCOLATE_CORN_CHIP": "Chocolate Corn Chip",
-
   "SALE_POINT": "Sale point",
   "EDUCATION_AREA": "Education institution",
   "E_UBRU_CANTEEN_1": "Canteen 1\nUBRU",
@@ -66,20 +57,16 @@
   "E_TPU_CANTEEN": "Cooperative\nTPU",
   "E_UTC_CANTEEN": "Canteen\nUTC",
   "E_BOYS_CANTEEN": "Cooperative\nBOYS",
-
   "DRINKING_AREA": "Drink shop area",
   "D_UBRU_WATER_SHOP": "Water Shop\nChareansri UBRU",
   "D_DAMPHRA_WATER_SHOP": "Water Shop\nSoi Damphra",
   "D_50PANSA_WATER_SHOP": "Water Shop\nOpposite 50 Pansa",
-
   "SHOP_AREA": "Shop area",
   "S_PHE_REAM_SHOP": "P\" Ream\nKan Luang Market",
   "S_KHUN_YAY_SHOP": "ร้านคุุณยาย\nSoi K-Ha Vanarom",
-
   "SOCIAL": "Social",
   "SO_FACEBOOK_FAN_PAGE": "Facebook FanPage",
   "SO_FACEBOOK_FAN_PAGE_DESC": "https://web.facebook.com/buaberryfp",
   "SO_LINE_OFFICE_ID": "LINE Official Id",
   "SO_LINE_OFFICE_ID_DESC": "@120yuvdr"
-
 }

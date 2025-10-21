@@ -4,11 +4,8 @@ import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ionicons/ionicons.dart';
 
-import '../../../../utils/context_extensions.dart';
-import '../../shop/presentation/widgets/header.dart';
-import '../../shop/presentation/widgets/language_tile.dart';
-import '../../shop/presentation/widgets/social_tile_widget.dart';
-import '../../shop/presentation/widgets/theme_widget.dart';
+import '../../../../shared/utils/context_extensions.dart';
+import '../../shop/widgets/widgets.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});

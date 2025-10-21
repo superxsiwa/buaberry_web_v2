@@ -2,15 +2,12 @@
   "CLICK": "คลิ๊ก",
   "TOGGLE_THEME": "ธีม",
   "TOGGLE_LANGUAGE": "ไทย",
-
   "SHOP_NAME": "BUABERRy",
   "SHOP_MOBILE_PHONE": "091-836-6687",
   "SHOP_SALOGAN": "ทำทุกวัน อร่อยทุกวัน",
-
   "MENU": "เมนู",
   "TWENTY_BATH": "20 บาท",
   "TEN_BATH": "10 บาท",
-
   "SANDWICH": "แซนวิช",
   "SANDWICH_TUNA": "ทูน่า",
   "SANDWICH_TUNA_BOLOGNA": "ทูน่า โบโลน่า",
@@ -20,7 +17,6 @@
   "SANDWICH_PORK_FLOSS_BOLOGNA": "หมูหยอง โบโลน่า",
   "SANDWICH_HAM_CHEESE": "แฮมชีส",
   "SANDWICH_SAUSAGE_FRIED_EGG": "ไส้กรอก ไข่ดาว",
-
   "VEGETABLE_HEALTHY": "ผักสุขภาพ",
   "VH_CORN": "ข้าวโพดนึ่ง",
   "VH_BANANA": "กล้วยนึ่ง",
@@ -28,7 +24,6 @@
   "VH_YELLOW_POTATO": "มันเหลืองนึ่ง",
   "VH_PUMPKIN": "ฟักทองนึ่ง",
   "VH_TARO": "เผือกนึ่ง",
-
   "DESSERT": "ขนม",
   "D_BROWNIE": "บราวนี",
   "D_BANANA_CAKE": "เค้กกล้วยหอม",
@@ -43,19 +38,16 @@
   "D_BUTTER_SUGAR_BREAD": "ปังเนยน้ำตาล",
   "D_GARLIC_BREAD": "ปังกระเทียม",
   "D_DAIFUKU": "ไดฟุกุ",
-
   "SALAPAO": "ซาลาเปา",
   "S_MINCED_PORK_SALTY_EGG": "หมูสับ+ไข่เค็ม",
   "S_MINCED_PORK": "หมูสับ",
   "S_ROAST_RED_PORK": "หมูแดง",
   "S_RED_BEAN": "ถั่วแดง",
   "S_TARO": "เผือก",
-
   "REPACK": "ขนมรีแพ็กกิ้ง",
   "S_BREAD_STICK": "ขนมขาไก่",
   "S_CHOCOLATE_STICK": "สติ๊กช็อคโกแล็ต",
   "S_CHOCOLATE_CORN_CHIP": "ช๊อกฯคอนชิพ",
-
   "SALE_POINT": "จุดขาย",
   "EDUCATION_AREA": "สถานศึกษา",
   "E_UBRU_CANTEEN_1": "โรงอาหาร 1\nม.ราชภัฏอุบล",
@@ -65,16 +57,13 @@
   "E_TPU_CANTEEN": "สหกรณ์\nรร.เตรียมพัฒน์อุบล",
   "E_UTC_CANTEEN": "โรงอาหาร\nวิทยาลัยเทคนิคอุบลฯ",
   "E_BOYS_CANTEEN": "สหกรณ์\nรร.ยุวพุทธ",
-
   "DRINKING_AREA": "ร้านเครื่องดื่ม",
   "D_UBRU_WATER_SHOP": "ร้านน้ำดื่ม\nเจริญศรีหน้าราชภัฎ",
   "D_DAMPHRA_WATER_SHOP": "ร้านน้ำดื่ม\nปากซอยด้ามพร้า",
   "D_50PANSA_WATER_SHOP": "ร้านน้ำดื่ม\nหน้าโรงพยาบาล 50 พรรษา",
-
   "SHOP_AREA": "ร้านค้า",
   "S_PHE_REAM_SHOP": "ร้านพี่เรียม\nบ้านก้านเหลือง",
   "S_KHUN_YAY_SHOP": "ร้านคุุณยาย\nซ.เคหะฯวนารมย์",
-
   "SOCIAL": "โซเชียล",
   "SO_FACEBOOK_FAN_PAGE": "Facebook FanPage",
   "SO_FACEBOOK_FAN_PAGE_DESC": "https://web.facebook.com/buaberryfp",
