@@ -13,36 +13,41 @@ class ThemeWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Row(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.all(15),
-          child: Text(
-            context.tr(LangKeys.TOGGLE_THEME),
-            style: Theme.of(context).textTheme.titleMedium!.apply(fontWeightDelta: 2),
-          ),
-        ),
-        const Spacer(),
-        SegmentedButton<ThemeMode>(
-          showSelectedIcon: false,
-          selected: <ThemeMode>{ref.watch(themeLogicProvider).themeMode},
-          segments: const <ButtonSegment<ThemeMode>>[
-            ButtonSegment<ThemeMode>(
-              icon: Icon(Ionicons.sunny_outline),
-              value: ThemeMode.light,
-            ),
-            ButtonSegment<ThemeMode>(
-              icon: Icon(
-                Ionicons.phone_portrait_outline,
+        // Padding(
+        //   padding: const EdgeInsets.all(15),
+        //   child: Text(
+        //     context.tr(LangKeys.TOGGLE_THEME),
+        //     style: Theme.of(context).textTheme.titleMedium!.apply(fontWeightDelta: 2),
+        //   ),
+        // ),
+        // const Spacer(),
+        SizedBox(
+          width: 150,
+          height: 35,
+          child: SegmentedButton<ThemeMode>(
+            showSelectedIcon: false,
+            selected: <ThemeMode>{ref.watch(themeLogicProvider).themeMode},
+            segments: const <ButtonSegment<ThemeMode>>[
+              ButtonSegment<ThemeMode>(
+                icon: Icon(Ionicons.sunny_outline),
+                value: ThemeMode.light,
               ),
-              value: ThemeMode.system,
-            ),
-            ButtonSegment<ThemeMode>(
-              icon: Icon(Ionicons.moon_outline),
-              value: ThemeMode.dark,
-            ),
-          ],
-          onSelectionChanged: (Set<ThemeMode> theme) => ref.read(themeLogicProvider.notifier).setThemeMode(theme.first),
+              ButtonSegment<ThemeMode>(
+                icon: Icon(
+                  Ionicons.phone_portrait_outline,
+                ),
+                value: ThemeMode.system,
+              ),
+              ButtonSegment<ThemeMode>(
+                icon: Icon(Ionicons.moon_outline),
+                value: ThemeMode.dark,
+              ),
+            ],
+            onSelectionChanged: (Set<ThemeMode> theme) => ref.read(themeLogicProvider.notifier).setThemeMode(theme.first),
+          ),
         ),
       ],
     );

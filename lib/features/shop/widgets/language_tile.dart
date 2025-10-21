@@ -10,19 +10,35 @@ class LanguageTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SwitchListTile(
-      onChanged: (bool newValue) {
-        /// Example: Change locale
-        /// The initial locale is automatically determined by the library.
-        /// Changing the locale like this will persist the selected locale.
-        context.setLocale(newValue ? const Locale('th') : const Locale('en'));
-      },
-      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12))),
-      value: context.locale == const Locale('th'),
-      title: Text(
-        context.tr(LangKeys.TOGGLE_LANGUAGE),
-        style: Theme.of(context).textTheme.titleMedium!.apply(fontWeightDelta: 2),
-      ),
+    return Column(
+      children: [
+        Text(
+          context.tr(LangKeys.TOGGLE_LANGUAGE),
+          style: Theme.of(context).textTheme.titleMedium!.apply(fontWeightDelta: 2),
+        ),
+        Center(
+          child: Switch(
+            value: context.locale == const Locale('th'),
+            onChanged: (bool newValue) {
+              context.setLocale(newValue ? const Locale('th') : const Locale('en'));
+            },
+          ),
+        ),
+      ],
     );
+    // return SwitchListTile(
+    //   onChanged: (bool newValue) {
+    //     /// Example: Change locale
+    //     /// The initial locale is automatically determined by the library.
+    //     /// Changing the locale like this will persist the selected locale.
+    //     context.setLocale(newValue ? const Locale('th') : const Locale('en'));
+    //   },
+    //   shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12))),
+    //   value: context.locale == const Locale('th'),
+    //   title: Text(
+    //     context.tr(LangKeys.TOGGLE_LANGUAGE),
+    //     style: Theme.of(context).textTheme.titleMedium!.apply(fontWeightDelta: 2),
+    //   ),
+    // );
   }
 }

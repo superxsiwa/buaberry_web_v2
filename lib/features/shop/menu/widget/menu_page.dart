@@ -5,11 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
+import 'package:sizer/sizer.dart';
 import '../../../../shared/shared.dart';
 import '../../widgets/header.dart';
 import '../../widgets/language_tile.dart';
 import '../../widgets/theme_widget.dart';
+import '../model/menu_m.dart';
 import '../provider/hello_provider.dart';
+import '../provider/menu_provider.dart';
 
 class MenuPage extends ConsumerWidget {
   const MenuPage({super.key});
@@ -19,30 +22,48 @@ class MenuPage extends ConsumerWidget {
     logger.log(dotenv.get(LangKeys.LOGO_PATH));
     return const Scaffold(
         body: SingleChildScrollView(
-      child: MenuScreenDesktop(),
+      child: MenuScreen(),
     ));
   }
 }
 
-class MenuScreenDesktop extends ConsumerWidget {
-  const MenuScreenDesktop({super.key});
+class MenuScreen extends ConsumerWidget {
+  const MenuScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final String value = ref.watch(helloWorldProvider);
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final double headColWidth = screenWidth / 12;
+    final List<MenuM> menuList = ref.watch(menuListProvider);
+    int col;
+    double headColWidth1;
+    double headColWidth2;
+    double headColWidth3;
 
+    if (Device.screenType == ScreenType.mobile) {
+      col = 2;
+      headColWidth1 = headColWidth * 3.0;
+      headColWidth2 = headColWidth * 7.0;
+      headColWidth3 = headColWidth * 2.0;
+    } else {
+      col = 5;
+      headColWidth1 = headColWidth * 2.25;
+      headColWidth2 = headColWidth * 7.5;
+      headColWidth3 = headColWidth * 2.25;
+    }
+    logger.log(':= ScreenType = ${Device.screenType.name}');
     return Column(
       children: <Widget>[
-        const Row(
+        Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SizedBox(height: 50, width: 300, child: ThemeWidget()),
-            Header(),
-            SizedBox(height: 50, width: 300, child: LanguageTile()),
+            SizedBox(height: 50, width: headColWidth1, child: const ThemeWidget()),
+            Header(screenWidth: headColWidth2, isMobileScreen: Device.screenType == ScreenType.mobile),
+            SizedBox(height: 70, width: headColWidth3, child: const LanguageTile()),
           ],
         ),
         const Divider(),
-        const Gap(5),
+        const Gap(10),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -78,34 +99,43 @@ class MenuScreenDesktop extends ConsumerWidget {
           ],
         ),
         const Gap(5),
-        // const ImageAssetWidget(imagePath: BuaberryImages.SHOP_MAIN_IMAGE_DESKTOP, height: 800, width: 900),
-        // _buildSandwichMenu(context),
-        Text(value),
+        _buildMenuList(context, menuList, col),
         const Gap(5),
       ],
     );
   }
 
-  // Widget _buildSandwichMenu(BuildContext context) {
-  //   return TableGridLayoutWidget(
-  //       tableLabel: NKWTextWidget(text: context.tr(LangKeys.SANDWICH)),
-  //       col: 5,
-  //       widgetList: List.generate(_controller.sandWichMenuList.length, (int index) {
-  //         return ProductCartWidget(
-  //             col: _col,
-  //             nameWidget: LabelTextWidget(
-  //               text: _controller.sandWichMenuList[index].name,
-  //               fontWeight: FontWeight.bold,
-  //             ),
-  //             imageWidget: ImageAssetWidget(
-  //               imagePath: (_controller.appMode != CommonConstants.PRODUCTION) ? null : _controller.sandWichMenuList[index].imageId,
-  //               height: _imageHeight,
-  //               width: _imageWidth,
-  //             ),
-  //             priceWidget: LabelTextWidget(
-  //               text: _controller.sandWichMenuList[index].price,
-  //               fontWeight: FontWeight.bold,
-  //             ));
-  //       }));
-  // }
+  Widget _buildMenuList(BuildContext context, List<MenuM> menuList, int col) {
+    final double screenWidth = MediaQuery.of(context).size.width / col;
+    final double aspectRatio = ((screenWidth + 80) / screenWidth);
+    return Column(children: [
+      // NKWTextWidget(text: context.tr(LangKeys.SANDWICH)),
+      Gap(20),
+      GridView.count(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          childAspectRatio: screenWidth / (screenWidth * aspectRatio),
+          crossAxisCount: col,
+          children: List.generate(menuList.length, (int index) {
+            return Padding(
+              padding: const EdgeInsets.all(8),
+              child: ColoredBox(
+                  color: Colors.black12,
+                  child: Column(
+                    children: <Widget>[
+                      Image.asset(
+                        menuList[index].imageId!,
+                        width: screenWidth - 10,
+                        height: screenWidth - 10,
+                      ),
+                      Gap(10),
+                      NKWTextWidget(text: context.tr(menuList[index].name), fontWeight: FontWeight.bold, fontSize: CommonConstants.fontLabelSize),
+                      Gap(5),
+                      NKWTextWidget(text: context.tr(menuList[index].price)),
+                    ],
+                  )),
+            );
+          }))
+    ]);
+  }
 }
