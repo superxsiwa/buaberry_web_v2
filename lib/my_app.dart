@@ -18,7 +18,8 @@ class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final ThemeUiModel currentTheme = ref.watch(themeLogicProvider);
     final GoRouter router = ref.watch(goRouterProvider);
-    return Sizer(builder: (context, orientation, deviceType) {
+    // context.setLocale(const Locale('th'));
+    return Sizer(builder: (BuildContext context, Orientation orientation, ScreenType deviceType) {
       return MaterialApp.router(
         routerConfig: router,
 
@@ -57,12 +58,11 @@ class MyApp extends ConsumerWidget {
           // To use the Playground font, add GoogleFonts package and uncomment
           // fontFamily: GoogleFonts.notoSans().fontFamily,
         ),
-
         themeMode: currentTheme.themeMode,
         debugShowCheckedModeBanner: false,
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,
-        locale: context.locale,
+        locale: context.locale, //const Locale('th'),
       );
     });
   }

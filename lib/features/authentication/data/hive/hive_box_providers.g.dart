@@ -6,7 +6,7 @@ part of 'hive_box_providers.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$userBoxHash() => r'587dbb06fe2d4fb6c2c521c2e33ac6fe1f45a588';
+String _$userBoxHash() => r'fa197b0eb37d342beb8a1270826c1f81bcbcbbab';
 
 /// 2️⃣ Open the encrypted box.
 /// Use `@Riverpod(keepAlive: true)` if you *never* want it disposed;

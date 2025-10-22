@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_displaymode/flutter_displaymode.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hive_ce/hive.dart';
+import 'package:hive_ce_flutter/adapters.dart';
 import 'package:stack_trace/stack_trace.dart' as stack_trace;
 
 import 'hive/hive.dart';
@@ -21,6 +23,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load();
   await EasyLocalization.ensureInitialized();
+
   await initHive();
   await setPreferredOrientations();
   if (!kIsWeb) {
@@ -40,10 +43,11 @@ void main() async {
   runApp(
     ProviderScope(
       child: EasyLocalization(
+        startLocale: const Locale('th'),
         supportedLocales: const <Locale>[
           /// Add your supported locales here
-          Locale('en'),
           Locale('th'),
+          Locale('en'),
         ],
         path: Strings.localizationsPath,
         fallbackLocale: const Locale('th'),

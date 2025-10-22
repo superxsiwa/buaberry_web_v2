@@ -1,5 +1,3 @@
-import 'dart:developer' as logger;
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -21,7 +19,9 @@ class MenuPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    logger.log(dotenv.get(LangKeys.LOGO_PATH));
+    logger
+      ..d('MenuPage -> local : ${context.locale}')
+      ..d('MenuPage -> ${dotenv.get(LangKeys.LOGO_PATH)}');
     return const Scaffold(
         body: SingleChildScrollView(
       child: MenuScreen(),
@@ -59,7 +59,7 @@ class MenuScreen extends ConsumerWidget {
       headColWidth2 = headColWidth * 7.5;
       headColWidth3 = headColWidth * 2.25;
     }
-    logger.log(':= ScreenType = ${Device.screenType.name}');
+    logger.d('MenuPage -> := ScreenType = ${Device.screenType.name}');
     return Column(
       children: <Widget>[
         Row(

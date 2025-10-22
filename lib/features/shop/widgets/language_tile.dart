@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../shared/constants/constants.dart';
+import '../../../shared/utils/logger.dart';
 
 class LanguageTile extends StatelessWidget {
   const LanguageTile({
@@ -21,6 +22,7 @@ class LanguageTile extends StatelessWidget {
             value: context.locale == const Locale('th'),
             onChanged: (bool newValue) {
               context.setLocale(newValue ? const Locale('th') : const Locale('en'));
+              logger.d('Switch changed : $newValue');
             },
           ),
         ),
