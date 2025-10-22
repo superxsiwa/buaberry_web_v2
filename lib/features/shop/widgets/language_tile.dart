@@ -11,7 +11,7 @@ class LanguageTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
+      children: <Widget>[
         Text(
           context.tr(LangKeys.TOGGLE_LANGUAGE),
           style: Theme.of(context).textTheme.titleMedium!.apply(fontWeightDelta: 2),
