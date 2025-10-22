@@ -67,7 +67,7 @@ class AboutUsPage extends ConsumerWidget {
               NKWTextLinkWidget(
                 text: context.tr(LangKeys.MENU),
                 color: Colors.grey.shade400,
-                fontSize: CommonConstants.fontHeaderSize,
+                fontSize: NKWFontSize.S5,
                 fontWeight: FontWeight.bold,
                 onPressed: () {
                   context.pushReplacement(BRRoute.menu.route);
@@ -77,7 +77,7 @@ class AboutUsPage extends ConsumerWidget {
               NKWTextLinkWidget(
                 text: context.tr(LangKeys.SALE_POINT),
                 color: Colors.grey.shade400,
-                fontSize: CommonConstants.fontHeaderSize,
+                fontSize: NKWFontSize.S5,
                 fontWeight: FontWeight.bold,
                 onPressed: () {
                   context.pushReplacement(BRRoute.sale_point.route);
@@ -89,7 +89,7 @@ class AboutUsPage extends ConsumerWidget {
           const Gap(15),
           NKWTextWidget(
             text: context.tr(LangKeys.ABOUT_US),
-            fontSize: CommonConstants.fontTopicSize,
+            fontSize: NKWFontSize.S4,
           ),
           const Gap(10),
           SizedBox(

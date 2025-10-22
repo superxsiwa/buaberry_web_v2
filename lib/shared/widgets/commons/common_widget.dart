@@ -89,7 +89,7 @@ class CommonWidget {
           size: iconSizeTmp,
         ),
         CommonWidget.rowWidth(width: 10.0),
-        Text("Buaberry.com", style: TextStyle(fontSize: CommonConstants.fontTopicSize, fontWeight: FontWeight.bold, color: Colors.white))
+        Text("Buaberry.com", style: TextStyle(fontSize: NKWFontSize.S4, fontWeight: FontWeight.bold, color: Colors.white))
       ],
     );
   }

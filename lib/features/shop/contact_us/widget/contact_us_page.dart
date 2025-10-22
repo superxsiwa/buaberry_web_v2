@@ -67,7 +67,7 @@ class ContactUsPage extends ConsumerWidget {
               NKWTextLinkWidget(
                 text: context.tr(LangKeys.MENU),
                 color: Colors.grey.shade400,
-                fontSize: CommonConstants.fontHeaderSize,
+                fontSize: NKWFontSize.S5,
                 fontWeight: FontWeight.bold,
                 onPressed: () {
                   context.pushReplacement(BRRoute.menu.route);
@@ -77,7 +77,7 @@ class ContactUsPage extends ConsumerWidget {
               NKWTextLinkWidget(
                 text: context.tr(LangKeys.SALE_POINT),
                 color: Colors.grey.shade400,
-                fontSize: CommonConstants.fontHeaderSize,
+                fontSize: NKWFontSize.S5,
                 fontWeight: FontWeight.bold,
                 onPressed: () {
                   context.pushReplacement(BRRoute.sale_point.route);
@@ -89,7 +89,7 @@ class ContactUsPage extends ConsumerWidget {
           const Gap(15),
           NKWTextWidget(
             text: context.tr(LangKeys.CONTACT_US),
-            fontSize: CommonConstants.fontTopicSize,
+            fontSize: NKWFontSize.S4,
           ),
           const Gap(20),
           SizedBox(
@@ -98,13 +98,13 @@ class ContactUsPage extends ConsumerWidget {
               children: <Widget>[
                 const NKWTextWidget(
                   text: 'E-Mail : yupawadee.poo@gmail.com',
-                  fontSize: CommonConstants.fontLabelSize,
+                  fontSize: NKWFontSize.S3,
                   fontWeight: FontWeight.bold,
                 ),
                 Gap(10),
                 NKWTextWidget(
                   text: 'Mobile number : ${context.tr(LangKeys.SHOP_MOBILE_PHONE)}',
-                  fontSize: CommonConstants.fontLabelSize,
+                  fontSize: NKWFontSize.S3,
                   fontWeight: FontWeight.bold,
                 ),
                 Gap(10),

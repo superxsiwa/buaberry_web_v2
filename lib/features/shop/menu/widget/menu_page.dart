@@ -78,7 +78,7 @@ class MenuScreen extends ConsumerWidget {
             NKWTextLinkWidget(
               text: context.tr(LangKeys.MENU),
               color: Colors.grey.shade700,
-              fontSize: CommonConstants.fontHeaderSize,
+              fontSize: NKWFontSize.S5,
               fontWeight: FontWeight.bold,
               onPressed: () {
                 // Get.offNamed(Routes.PRODUCT_MENU);
@@ -88,7 +88,7 @@ class MenuScreen extends ConsumerWidget {
             NKWTextLinkWidget(
               text: context.tr(LangKeys.SALE_POINT),
               color: Colors.grey.shade400,
-              fontSize: CommonConstants.fontHeaderSize,
+              fontSize: NKWFontSize.S5,
               fontWeight: FontWeight.bold,
               onPressed: () {
                 context.pushReplacement(BRRoute.sale_point.route);
@@ -130,7 +130,7 @@ class MenuScreen extends ConsumerWidget {
                         height: screenWidth - 10,
                       ),
                       Gap(10),
-                      NKWTextWidget(text: context.tr(menuList[index].name), fontWeight: FontWeight.bold, fontSize: CommonConstants.fontLabelSize),
+                      NKWTextWidget(text: context.tr(menuList[index].name), fontWeight: FontWeight.bold, fontSize: NKWFontSize.S3),
                       Gap(5),
                       NKWTextWidget(text: context.tr(menuList[index].price)),
                     ],

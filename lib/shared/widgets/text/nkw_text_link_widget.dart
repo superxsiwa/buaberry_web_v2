@@ -16,8 +16,7 @@ class NKWTextLinkWidget extends StatelessWidget {
         onTap: onPressed ?? () {},
         child: Text(
           text,
-          style: TextStyle(
-              fontWeight: fontWeight ?? FontWeight.bold, fontSize: fontSize ?? CommonConstants.fontNormalSize, color: color ?? Colors.black),
+          style: TextStyle(fontWeight: fontWeight ?? FontWeight.bold, fontSize: fontSize ?? NKWFontSize.S2, color: color ?? Colors.black),
         ));
   }
 }

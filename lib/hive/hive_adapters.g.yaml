@@ -9,11 +9,3 @@ types:
     fields:
       themeMode:
         index: 1
-  LoginCredentials:
-    typeId: 3
-    nextIndex: 2
-    fields:
-      email:
-        index: 0
-      password:
-        index: 1

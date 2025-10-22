@@ -13,8 +13,7 @@ class NKWTextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style:
-          TextStyle(fontSize: fontSize ?? CommonConstants.fontNormalSize, fontWeight: fontWeight ?? FontWeight.normal, color: color ?? Colors.black),
+      style: TextStyle(fontSize: fontSize ?? NKWFontSize.S2, fontWeight: fontWeight ?? FontWeight.normal, color: color ?? Colors.black),
     );
   }
 }

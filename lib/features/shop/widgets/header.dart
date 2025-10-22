@@ -30,7 +30,7 @@ class Header extends StatelessWidget {
                 NKWTextWidget(
                   text: context.tr(LangKeys.SHOP_NAME),
                   color: ColorConstants.buaberryColor,
-                  fontSize: 100 > (screenWidth / 6) ? CommonConstants.fontNormalSize : CommonConstants.fontTopicSize,
+                  fontSize: 100 > (screenWidth / 6) ? NKWFontSize.S2 : NKWFontSize.S4,
                   fontWeight: FontWeight.bold,
                 ),
               ],
@@ -39,15 +39,10 @@ class Header extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 const Gap(15),
-                NKWTextWidget(
-                  text: context.tr(LangKeys.SHOP_MOBILE_PHONE),
-                  fontSize: CommonConstants.fontLabelSize,
-                  color: Colors.grey.shade700,
-                ),
                 Row(
-                  children: [
+                  children: <Widget>[
                     IconButton(
-                      icon: Icon(Icons.facebook),
+                      icon: const Icon(Icons.facebook),
                       onPressed: () {
                         openUrl(Uri.parse('https://www.facebook.com/buaberryfp?locale=th_TH'));
                       },
@@ -68,21 +63,26 @@ class Header extends StatelessWidget {
                 if (screenWidth >= 700)
                   NKWTextWidget(
                     text: context.tr(LangKeys.SHOP_SALOGAN),
-                    fontSize: isMobileScreen ? CommonConstants.fontLabelSize : CommonConstants.fontTopicSize,
+                    fontSize: isMobileScreen ? NKWFontSize.S3 : NKWFontSize.S4,
                     fontWeight: FontWeight.bold,
                     color: Colors.grey.shade700,
                   ),
+                NKWTextWidget(
+                  text: context.tr(LangKeys.SHOP_MOBILE_PHONE),
+                  fontSize: NKWFontSize.S3,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey.shade700,
+                ),
               ],
             )
           ],
         ),
         if (700 > screenWidth)
           Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
+            children: <Widget>[
               NKWTextWidget(
                 text: context.tr(LangKeys.SHOP_SALOGAN),
-                fontSize: isMobileScreen ? CommonConstants.fontLabelSize : CommonConstants.fontTopicSize,
+                fontSize: isMobileScreen ? NKWFontSize.S3 : NKWFontSize.S4,
                 fontWeight: FontWeight.bold,
                 color: Colors.grey.shade700,
               ),

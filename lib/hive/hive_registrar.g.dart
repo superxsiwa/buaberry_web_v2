@@ -7,14 +7,12 @@ import 'package:buaberry_web/hive/hive_adapters.dart';
 
 extension HiveRegistrar on HiveInterface {
   void registerAdapters() {
-    registerAdapter(LoginCredentialsAdapter());
     registerAdapter(ThemeUiModelAdapter());
   }
 }
 
 extension IsolatedHiveRegistrar on IsolatedHiveInterface {
   void registerAdapters() {
-    registerAdapter(LoginCredentialsAdapter());
     registerAdapter(ThemeUiModelAdapter());
   }
 }
