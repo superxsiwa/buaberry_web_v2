@@ -1,16 +1,18 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:logger/logger.dart';
 
 import '../../../../shared/constants/constants.dart';
 import '../../../shared/utils/logger.dart';
 
-class LanguageTile extends StatelessWidget {
+class LanguageTile extends ConsumerWidget {
   const LanguageTile({
     super.key,
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Column(
       children: <Widget>[
         Text(
@@ -20,9 +22,12 @@ class LanguageTile extends StatelessWidget {
         Center(
           child: Switch(
             value: context.locale == const Locale('th'),
-            onChanged: (bool newValue) {
-              context.setLocale(newValue ? const Locale('th') : const Locale('en'));
+            onChanged: (bool newValue) async {
+              await context.setLocale(newValue ? const Locale('th') : const Locale('en'));
               logger.d('Switch changed : $newValue');
+              // await ref.read(localAppVarRepository).saveLocalAppVar(localAppVar).catchError((dynamic error) {
+              //   Logger().e('Failed to cache user: $error');
+              // });
             },
           ),
         ),
