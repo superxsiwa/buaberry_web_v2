@@ -9,6 +9,7 @@ import 'package:go_router/go_router.dart';
 import 'package:sizer/sizer.dart';
 import '../../../../router/app_router.dart';
 import '../../../../shared/shared.dart';
+import '../../widgets/footer.dart';
 import '../../widgets/header.dart';
 import '../../widgets/language_tile.dart';
 import '../../widgets/theme_widget.dart';
@@ -47,7 +48,13 @@ class MenuScreen extends ConsumerWidget {
       headColWidth2 = headColWidth * 7.0;
       headColWidth3 = headColWidth * 2.0;
     } else {
-      col = 5;
+      if (screenWidth > 1000) {
+        col = 5;
+      } else if (screenWidth > 750) {
+        col = 4;
+      } else {
+        col = 3;
+      }
       headColWidth1 = headColWidth * 2.25;
       headColWidth2 = headColWidth * 7.5;
       headColWidth3 = headColWidth * 2.25;
@@ -87,21 +94,14 @@ class MenuScreen extends ConsumerWidget {
                 context.pushReplacement(BRRoute.sale_point.route);
               },
             ),
-            const Gap(20),
-            NKWTextLinkWidget(
-              text: context.tr(LangKeys.SOCIAL),
-              color: Colors.grey.shade400,
-              fontSize: CommonConstants.fontHeaderSize,
-              fontWeight: FontWeight.bold,
-              onPressed: () {
-                // Get.offNamed(Routes.OUR_SOCIAL);
-              },
-            )
+            const Gap(20)
           ],
         ),
-        const Gap(5),
+        const Gap(10),
         _buildMenuList(context, menuList, col),
         const Gap(5),
+        const BRFooter(),
+        const Gap(20),
       ],
     );
   }

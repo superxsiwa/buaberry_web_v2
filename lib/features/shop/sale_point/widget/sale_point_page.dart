@@ -9,6 +9,7 @@ import 'package:go_router/go_router.dart';
 import 'package:sizer/sizer.dart';
 import '../../../../router/app_router.dart';
 import '../../../../shared/shared.dart';
+import '../../widgets/footer.dart';
 import '../../widgets/header.dart';
 import '../../widgets/language_tile.dart';
 import '../../widgets/theme_widget.dart';
@@ -47,7 +48,13 @@ class SalePointScreen extends ConsumerWidget {
       headColWidth2 = headColWidth * 7.0;
       headColWidth3 = headColWidth * 2.0;
     } else {
-      col = 5;
+      if (screenWidth > 1000) {
+        col = 5;
+      } else if (screenWidth > 750) {
+        col = 4;
+      } else {
+        col = 3;
+      }
       headColWidth1 = headColWidth * 2.25;
       headColWidth2 = headColWidth * 7.5;
       headColWidth3 = headColWidth * 2.25;
@@ -87,22 +94,15 @@ class SalePointScreen extends ConsumerWidget {
                 // Get.offNamed(Routes.BUY_PRODUCT);
               },
             ),
-            const Gap(20),
-            NKWTextLinkWidget(
-              text: context.tr(LangKeys.SOCIAL),
-              color: Colors.grey.shade400,
-              fontSize: CommonConstants.fontHeaderSize,
-              fontWeight: FontWeight.bold,
-              onPressed: () {
-                // Get.offNamed(Routes.OUR_SOCIAL);
-              },
-            )
+            const Gap(20)
           ],
         ),
-        const Gap(5),
+        const Gap(10),
         // Text('>>> ${salePointList.length}'),
         _buildSalePointList(context, salePointList, col),
         const Gap(5),
+        const BRFooter(),
+        const Gap(20),
       ],
     );
   }
@@ -110,9 +110,9 @@ class SalePointScreen extends ConsumerWidget {
   Widget _buildSalePointList(BuildContext context, List<SalePointM> salePointList, int col) {
     final double screenWidth = MediaQuery.of(context).size.width / col;
     final double aspectRatio = (screenWidth + 80) / screenWidth;
-    return Column(children: [
+    return Column(children: <Widget>[
       // NKWTextWidget(text: context.tr(LangKeys.SANDWICH)),
-      Gap(20),
+      const Gap(20),
       GridView.count(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
@@ -131,11 +131,11 @@ class SalePointScreen extends ConsumerWidget {
                       //   height: screenWidth - 10,
                       // ),
                       Container(
-                        color: Colors.pinkAccent,
+                        color: Colors.white12,
                         width: screenWidth - 10,
                         height: screenWidth - 10,
                       ),
-                      Gap(10),
+                      const Gap(10),
                       NKWTextWidget(
                           text: context.tr(salePointList[index].name), fontWeight: FontWeight.bold, fontSize: CommonConstants.fontLabelSize),
                     ],

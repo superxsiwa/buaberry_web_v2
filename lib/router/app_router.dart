@@ -13,8 +13,8 @@ part 'app_router.g.dart';
 enum BRRoute {
   menu,
   sale_point,
-  social,
-  login;
+  contact_us,
+  about_us;
 
   String get route => '/${toString().replaceAll('BRRoute.', '')}';
   String get name => toString().replaceAll('BRRoute.', '');
@@ -25,11 +25,6 @@ GoRouter goRouter(Ref ref) => GoRouter(
       initialLocation: BRRoute.menu.route,
       routes: <GoRoute>[
         GoRoute(
-            path: BRRoute.login.route,
-            builder: (BuildContext context, GoRouterState state) {
-              return const LoginScreen();
-            }).fade(),
-        GoRoute(
           path: BRRoute.menu.route,
           builder: (BuildContext context, GoRouterState state) => const MenuPage(),
         ).fade(),
@@ -37,5 +32,15 @@ GoRouter goRouter(Ref ref) => GoRouter(
           path: BRRoute.sale_point.route,
           builder: (BuildContext context, GoRouterState state) => const SalePointPage(),
         ).fade(),
+        GoRoute(
+            path: BRRoute.contact_us.route,
+            builder: (BuildContext context, GoRouterState state) {
+              return const ContactUsPage();
+            }).fade(),
+        GoRoute(
+            path: BRRoute.about_us.route,
+            builder: (BuildContext context, GoRouterState state) {
+              return const AboutUsPage();
+            }).fade(),
       ],
     );

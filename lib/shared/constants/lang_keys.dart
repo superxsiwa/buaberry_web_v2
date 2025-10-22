@@ -82,9 +82,6 @@ class LangKeys {
   static const String S_PHE_REAM_SHOP = 'S_PHE_REAM_SHOP';
   static const String S_KHUN_YAY_SHOP = 'S_KHUN_YAY_SHOP';
 
-  static const String SOCIAL = 'SOCIAL';
-  static const String SO_FACEBOOK_FAN_PAGE = 'SO_FACEBOOK_FAN_PAGE';
-  static const String SO_FACEBOOK_FAN_PAGE_DESC = 'SO_FACEBOOK_FAN_PAGE_DESC';
-  static const String SO_LINE_OFFICE_ID = 'SO_LINE_OFFICE_ID';
-  static const String SO_LINE_OFFICE_ID_DESC = 'SO_LINE_OFFICE_ID_DESC';
+  static const String CONTACT_US = 'CONTACT_US';
+  static const String ABOUT_US = 'ABOUT_US';
 }
